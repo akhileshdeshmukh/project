@@ -1,0 +1,63 @@
+<div class="jumbotron text-center" style="background-color:grey; height:140px ;text-align: center;">
+    <h1 style="color: orangered;margin-top: -20px;">NEWS-BLOGGER</h1>
+    <p>Akhilesh</p>
+  </div>
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light " >
+  <a class="navbar-brand" routerLink="/Reader">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/poll">Poll<span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/poll">poll</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/PollResult">pollResult</a>
+      </li>
+
+      <li class="nav-item dropdown" (click)="getdata()">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          catagory
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
+        <table>
+          <tr *ngFor="let catagory of list">
+          <td> 
+          <a class="dropdown-item" (click)="setcatagory(catagory)" style="color:blue;" >{{catagory.categoryName}}</a>
+      </td>
+    </tr>
+  </table>
+</div>
+</li>
+
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    language
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
+    <a class="dropdown-item" (click)="setlanguage('English')"  style="color:blue;" >English</a>
+    <a class="dropdown-item" (click)="setlanguage('Marathi')" style="color:blue;" >Marathi</a>
+  </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/contactus">Contact-Us</a>
+  </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Admin-login</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" #myForm="ngForm" (ngSubmit)="searchbydate(myForm.value)" >
+      <input class="form-control mr-sm-2" ngModel name="sdate" type="date" placeholder="Search-by-date" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search By Date</button>
+    </form>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>

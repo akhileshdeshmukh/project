@@ -1,0 +1,72 @@
+<app-writer></app-writer>
+
+<div class="d-flex justify-content-center">
+<legend style="color: darkred; text-align: center;">Edit</legend>
+</div>
+
+<div class="d-flex justify-content-center">
+<div class="form-group">
+  <label for="userId">userId</label>
+  <input [(ngModel)]="writers.userId" type="text" class="form-control" id="userId" name="userId">
+</div>
+</div>
+<div class="d-flex justify-content-center">
+<h4>Admin type</h4>
+</div>
+<div class="d-flex justify-content-center">
+<select [(ngModel)]="writers.role" name="role" id="role" aria-readonly="true" >
+        <option value="WRITER"><h5>WRITER</h5></option>
+        <!-- <option value="EDITOR"><h5>EDITOR</h5></option>    -->
+  </select>
+  </div>
+  <div class="d-flex justify-content-center">
+<div class="form-group">
+  <label for="name">Name</label>
+  <input [(ngModel)]="writers.name" type="text" class="form-control" id="name" name="name">
+</div>
+</div>
+<div class="d-flex justify-content-center">
+<h4>select gender</h4>
+</div>
+<div class="d-flex justify-content-center">
+<select [(ngModel)]="writers.gender" name="gender" id="gender">
+  <option value="male"><h4>male</h4></option>   
+  <option value="female"><h4>female</h4></option> 
+</select>
+</div>
+<div class="d-flex justify-content-center">
+<div class="form-group">
+    <label for="email">email_id</label>
+    <input [(ngModel)]="writers.email" type="text" class="form-control" id="email" name="email">
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+<div class="form-group">
+      <label for="mobileno">mobile_no</label>
+      <input [(ngModel)]="writers.mobileno" type="number" class="form-control" id="mobileno" name="mobileno">
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+<div class="form-group">
+  <label for="address">Address</label>
+  <input [(ngModel)]="writers.address" type="text" class="form-control" id="address" name="address">
+</div>
+</div>
+<div class="d-flex justify-content-center">
+<div class="form-group">
+    <label for="dob">dob</label>
+    <input [(ngModel)]="writers.dob" type="date" class="form-control" id="dob" name="dob">
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <div class="form-group">
+    <label for="password">password</label>
+    <input [(ngModel)]="writers.password" type="password" class="form-control" id="password" name="password" readonly>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+<button type="button" (click)="update()" class="btn btn-primary">save-change</button>
+<span>{{message}}</span>
+</div>
+
+

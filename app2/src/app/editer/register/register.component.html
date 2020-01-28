@@ -1,0 +1,75 @@
+
+<app-editer></app-editer>
+<div class="d-flex justify-content-center" style="background-color: rgb(198, 241, 241);">
+
+<form #myForm="ngForm" (ngSubmit)="addempl(myForm)" role="form" ngNativeValidate>
+  <legend style="color: darkred;"><h2>Register</h2></legend>
+  <h5>Role</h5>
+        <select ngModel name="role" id="t_role">select
+          <option value="EDITOR"><h5>editor</h5></option>   
+          <option value="WRITER"><h5>writer</h5></option> 
+      <!-- Editer<input ngModel type="radio" id="t_role" name="t_role">
+      writer<input ngModel type="radio" id="t_role" name="t_role"> -->
+    </select>
+
+  <div class="form-group">
+    <label for="name">Name</label> <span style="color: red;">*</span>
+    <input ngModel type="text" class="form-control" id="name" name="name" required="required">
+  </div>
+  <h4>select gender <span style="color: red;">*</span> </h4> 
+  <select ngModel name="gender" id="gender">
+    <option value="male"><h4>male</h4></option>   
+    <option value="female"><h4>female</h4></option> 
+</select>
+
+  <div class="form-group"> 
+      <label for="email_id">email_id</label> <span style="color: red;">*</span>
+      <!-- <input ngModel type="text" class="form-control" id="email_id" name="email" required="required"> -->
+      <input type="text" ngModel name="email" pattern="[[a-zA-Z0-9_\-\.]+@([a-zA-Z0-9_\-\.]+)\.[a-zA-Z]{2,5}]*"
+      #Vemail="ngModel" class="form-control" [class.alert-danger]=" Vemail.touched   && Vemail.invalid"
+      id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+
+  <div *ngIf="Vemail.touched && Vemail.invalid" style="width:20px;height: 20px;"
+      class="spinner-border text-danger" role="status">
+      <span class="sr-only">...</span>
+
+  </div>
+   
+  <div class="alert-danger" *ngIf="Vemail.touched && Vemail.invalid" style="width: 20%;">Email is not valid</div>
+  <div class="alert-success" *ngIf="Vemail.touched && Vemail.valid" style="width: 20%;">OK</div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="mobile">mobile no</label> <span style="color: red;">*</span>
+        <input ngModel type="tel" pattern="[0-9]{10}" class="form-control" id="mobileno" name="mobileno" required="required">
+      </div>
+
+  <div class="form-group">
+    <label for="address">Address</label> <span style="color: red;">*</span>
+    <input ngModel type="text" class="form-control" id="address" name="address" required="required">
+  </div>
+
+  <div class="form-group"> 
+      <label for="dob">dob</label> <span style="color: red;">*</span>
+      <input ngModel type="date" class="form-control" id="dob" name="dob" required="required">
+    </div>
+  
+    <div class="form-group"> 
+        <label for="password">password</label> <span style="color: red;">*</span>
+        <!-- <input ngModel type="password" class="form-control" id="password" name="password" required="required"> -->
+     
+        <input type="password" ngModel #Vpass="ngModel" required 
+        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*" 
+         class="form-control" name="password" id="inputEmail4" placeholder="Email">
+        <div class="alert-danger" *ngIf="Vpass.touched && Vpass.invalid" style="width:200%;">
+            Passwords will contain at least 1 upper case letter, 1 lower case letter ,least 1 number or special character            </div>
+        <div class="alert-success" *ngIf="Vpass.touched && Vpass.valid" style="width: 50%;">OK</div>
+
+      </div>
+
+
+  <button type="submit" class="btn btn-primary">Register</button>
+ <span style="color: red; size: 30px;" >{{msg}}</span> 
+</form>
+</div>

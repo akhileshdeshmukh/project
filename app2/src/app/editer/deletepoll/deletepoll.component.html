@@ -1,0 +1,27 @@
+<app-editer></app-editer>
+
+<span *ngIf="!flag" style="color: red;">{{msg}}</span>
+
+<div *ngIf="flag" class="table-responsive">
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td>{{list.addPoll}}</td>
+      </tr>
+      <tr>
+        <td>{{list.optA}}</td>
+        <td>{{list.optB}}</td>
+        <td>{{list.optC}}</td>
+        <td>{{list.optD}}</td>
+        </tr>
+        <tr>
+        <td>
+        <button type="button" (click)="editdata(list.pollId)" class="btn btn-success">Edit</button>
+        </td>
+        <td>
+        <button type="button" (click)="delete(list.pollId)" class="btn btn-warning">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

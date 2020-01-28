@@ -1,0 +1,19 @@
+<app-reader></app-reader>
+
+<!-- class="border border-dark" -->
+<br>
+<br>
+
+<span *ngIf="!flag" style="color: red;">{{msg}}</span>
+
+    <div *ngIf="flag" id="question-div" style="margin-left: 5%;margin-right: 5%;"> 
+      <p class="question"><strong>{{poll.addPoll}}</strong></p>
+          <label id="A1T">A. {{poll.optA}} &nbsp;&nbsp;&nbsp; {{pollresult[0]}}% </label><br>
+    
+          <label id="B1T">B.  {{poll.optB}} &nbsp;&nbsp;&nbsp; {{pollresult[1]}}%</label><br>
+    
+          <label id="C1T">C.  {{poll.optC}} &nbsp;&nbsp;&nbsp; {{pollresult[2]}}%</label><br>
+    
+          <label id="D1T">D.  {{poll.optD}} &nbsp;&nbsp;&nbsp; {{pollresult[3]}}%</label><br>
+
+</div>

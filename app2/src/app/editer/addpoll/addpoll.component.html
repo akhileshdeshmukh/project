@@ -1,0 +1,44 @@
+<app-editer></app-editer>
+
+<!-- <div style="position: fixed;top: 80%;left:50%;  transform: translate(-50%, -50%);"> -->
+    <div style="margin-left: 25%; margin-right: 25%;">  
+  <form #myForm="ngForm" (ngSubmit)="uplodepoll(myForm.value)" role="form">
+  <legend style="text-align: center;">Add poll</legend>
+  
+  <div class="form-group">
+    <label for="">Enter new poll</label>
+    
+    <textarea  ngModel name="addPoll" id="input" class="form-control" rows="3" required="required"></textarea>
+    <!-- <input ngModel style="width: 300px;" type="texta" class="form-control" name="otp"  id="" placeholder="123465"> -->
+  </div>
+  
+  <div class="form-group">
+      <label for="password">Answer 1</label>
+      <input required="required" ngModel  type="text" class="form-control" name="optA" id="">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Answer 2</label>
+        <input required="required" ngModel  type="text" class="form-control" name="optB" id="" >
+      </div>
+
+      <div class="form-group">
+          <label for="password">Answer 3</label>
+          <input required="required" ngModel type="text" class="form-control" name="optC" id="">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Answer 4</label>
+            <input required="required" ngModel type="text" class="form-control" name="optD" id="">
+          </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" value="Reload" onclick="window.location.reload();" class="btn btn-success">clear</button>
+  </form>  
+  <br>
+  <!-- <span *ngIf="!flag" style="color: red;">{{msg}}</span>
+  <a *ngIf="flag" style="color: blue;" >{{msg}}</a> -->
+  </div>
+  
+  
+  

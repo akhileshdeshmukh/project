@@ -1,0 +1,83 @@
+
+<app-editer></app-editer>
+<div style="text-align: center; ">
+<div class="nav-item dropdown" (click)="getdata()" >
+  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    catagory
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown"  style="background-color: black;">
+  <table>
+    <tr *ngFor="let catagory of list">
+    <td> 
+    <a class="dropdown-item" (click)="setcatagory(catagory)" style="color:blue; " >{{catagory.categoryName}}</a>
+</td>
+</tr>
+</table>
+</div>
+<input type="text" name="catagory" [(ngModel)]="news.categories.categoryName" readonly placeholder="select catagory" required="required">
+</div>
+<br>
+
+
+<form #myForm="ngForm" (ngSubmit)="editnews(myForm.value)" role="form" ngNativeValidate>
+<div class="table-responsive" style="margin-left: 20%;">
+  <table>
+    <tr>
+      <td>
+          <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                languages
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:black" >
+                <a class="dropdown-item" (click)="setlanguage('English')" style="color:blue;" >English</a>
+                <a class="dropdown-item" (click)="setlanguage('Marathi')" style="color:blue;" >मराठी</a>
+            </div>
+            <input ngModel [(ngModel)]="news.language" type="text" name="language" readonly placeholder="select languages" required="required">
+            </div>
+      </td>
+    </tr>
+    <br><br>
+      <tr>
+        <td> 
+          <label for="newsTitle">News Title</label><br>
+          <textarea *ngIf="flag" ngModel  [(ngModel)]="news.newsTitle" name="newsTitle" id="newsTitle" cols="40" rows="2" required></textarea>
+          <textarea *ngIf="!flag" ngModel  [(ngModel)]="news.newsTitle" name="newsTitle" id="txtEnglish" cols="40" rows="2" required></textarea>
+        </td>
+        </tr>
+        <br><br>
+        <tr>
+       <td>
+        <label for="newsDescription">News Description</label><br>
+        <textarea *ngIf="flag" ngModel [(ngModel)]="news.newsDescription" name="newsDescription" id="newsDescription" cols="40" rows="5" required ></textarea>
+        <textarea *ngIf="!flag" ngModel [(ngModel)]="news.newsDescription" id="txtEnglish1" name="newsDescription" cols="40" rows="5" required ></textarea>
+          </td>
+         </tr>
+         <br><br>
+          <tr>
+            <td>
+              <label>image url</label><br>
+              <input ngModel [(ngModel)]="news.image" type="url" name="image" id="image" class="form-control" value="" required="required" title="">
+            </td>
+          </tr>
+          <br><br>
+        <tr>
+          <td>
+            <label>News Link</label><br>
+            <input ngModel [(ngModel)]="news.newsLink" type="url" name="newsLink" id="newsLink" class="form-control" value="" required="required" title="">
+          </td>
+        </tr>
+        <br><br>
+        <tr>
+          <td>
+            <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button ngModel type="button" value="Reload" onclick="window.location.reload();" class="btn btn-success">clear</button>
+          </td>
+        </tr>
+  </table>
+</div>
+</form>
+</div>
+<samp style="color: green;"><h3>{{msg}}</h3></samp>
+<br><br><br>
+
+

@@ -1,0 +1,35 @@
+<app-reader></app-reader>
+
+<!-- class="border border-dark" -->
+<br>
+<br>
+<!-- 
+  <div  id="question-div" style="margin-left: 5%;margin-right: 5%;">
+      <p class="question"><strong>1.   In OOP languages, all of the processing and functionality has been moved to </strong></p>
+      <form  #myForm="ngForm" (ngSubmit)="submitpoll(myForm.value)" role="form">   
+          <label id="A1T">A. <input ngModel type="radio" name="answer1" id="A1" value="the objects"> the objects </label><br>
+    
+          <label id="B1T">B. <input  ngModel type="radio" name="answer1" id="B1"  value="the classes"> the classes </label><br>
+    
+          <label id="C1T">C. <input  ngModel type="radio" name="answer1" id="C1"  value="class members"> class members </label><br>
+    
+          <label id="D1T">D. <input  ngModel type="radio" name="answer1" id="D1"  value="all of the above"> all of the above </label><br>
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div> -->
+
+<span *ngIf="!flag" style="color: red;">{{msg}}</span>
+
+    <div *ngIf="flag" id="question-div" style="margin-left: 5%;margin-right: 5%;"> 
+      <p class="question"><strong>{{poll.addPoll}}</strong></p>
+      <form  #myForm="ngForm" (ngSubmit)="submitpoll(myForm.value)" role="form">   
+          <label id="A1T">A. <input ngModel type="radio" name="answer1" id="A1" value="A">    {{poll.optA}}</label><br>
+    
+          <label id="B1T">B. <input  ngModel type="radio" name="answer1" id="B1"  value="B">    {{poll.optB}}</label><br>
+    
+          <label id="C1T">C. <input  ngModel type="radio" name="answer1" id="C1"  value="C">    {{poll.optC}}</label><br>
+    
+          <label id="D1T">D. <input  ngModel type="radio" name="answer1" id="D1"  value="D">    {{poll.optD}}</label><br>
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>

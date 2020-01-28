@@ -1,0 +1,30 @@
+<app-writer></app-writer>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email-ID</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>Date of barth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{l.userId}}</td>
+        <td>{{l.name}}</td>
+        <td>{{l.email}}</td>
+        <td>{{l.mobileno}}</td>
+        <td>{{l.address}}</td>
+        <td>{{l.dob | date: 'yyyy-MM-dd' }}</td>
+        <td>
+        <button type="button" (click)="editdata()" class="btn btn-success">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- <span>{{msg}}</span> -->

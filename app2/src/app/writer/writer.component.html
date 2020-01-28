@@ -1,0 +1,34 @@
+<div class="jumbotron text-center" style="background-color:grey; height:140px ;text-align: center;">
+  <h1 style="color: orangered;margin-top: -20px;">NEWS-BLOGGER</h1>
+  <p>Akhilesh</p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+<a class="navbar-brand" routerLink="/writerhome">Menu</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/addnewsbywriter">Add News<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/profile">Profile<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/editprofile" >Edit Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/changepasswordofwriter">Change Password</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/login" (click)="service.Logout()" >log-out</a>
+    </li>
+  </ul>
+</div>
+</nav>
+
+<router-outlet></router-outlet>

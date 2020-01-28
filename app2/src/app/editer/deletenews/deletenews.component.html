@@ -1,0 +1,42 @@
+
+<app-editer></app-editer>
+
+<br>
+  <div class="table-responsive" style="height: 100%; width: 100%;">
+      <table>
+              <tr *ngFor="let l of news">
+                  <td>
+                                <div class="table-responsive"  style="height: 100%; width: 100%;">
+                                      <table class="table table-bordered" style="height: 250px; width: 100%;background-color: grey" align="center">
+                                        <tbody>
+                                          <tr>
+                                            <td><img src="{{l.image}}" alt="{{l.newsTitle}}" title="{{l.newsTitle}}"></td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <h2>{{l.newsTitle}}</h2>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                            <td><h6>Date: {{l.uploadDate | date:'yyyy-MM-dd'}} Time: {{l.uploadTime}}</h6></td>
+                                          </tr>
+                                          <tr>
+                                              <td> <h4> <p>{{l.newsDescription}}</p> </h4> </td>
+                                            </tr>
+                                              <tr>
+                                                  <td><h4> <a href="{{l.newsLink}}">read More</a>&nbsp;&nbsp;&nbsp;&nbsp;Ststus :{{l.flag}} &nbsp;&nbsp;&nbsp;&nbsp; Category :{{l.categories.categoryName}} </h4> </td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                <button type="button"  (click)="deletenews(l.newsId)" class="btn btn-danger">Delete News</button>&nbsp;&nbsp;
+                                                 <button type="button" (click)="unuploadnews(l.newsId)" class="btn btn-primary">Unupload news</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                      </div>   
+                  </td>
+              </tr>
+      </table>
+  </div>
+  

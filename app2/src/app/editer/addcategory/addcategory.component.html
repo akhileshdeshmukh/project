@@ -1,0 +1,35 @@
+<app-editer></app-editer>
+<div class="d-flex justify-content-center">
+<h4> already exists category </h4>
+</div>
+
+<div class="d-flex justify-content-center">
+<ul>
+<li class="nav-item dropdown" (click)="getdata()">
+  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    catagory
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
+  <table>
+    <tr *ngFor="let catagory of list">
+    <td> 
+    <a class="dropdown-item" style="color:blue;" >{{catagory.categoryName}}</a>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<br>
+<br><br>
+<div class="d-flex justify-content-center">
+  <h3>Add New Category</h3>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+  <input type="text" [(ngModel)]="category" name="add" id="exampleInputAmount" placeholder="Add Category Name">
+    <button type="button" (click)="addcategory()" class="btn btn-success">Add Category</button>
+<span style="color: green;"><h4>{{msg}}</h4></span>
+</div>
+
